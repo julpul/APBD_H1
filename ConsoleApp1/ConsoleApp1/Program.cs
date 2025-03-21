@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using System.Runtime.InteropServices.ComTypes;
+using ConsoleApp1;
 
-Console.WriteLine("Hello, World!");
+Kontener kontener = new Kontener(12, 12, 12, 12, 12, ContainerType.RefrigeratedContainer);
+Kontener kontener1 = new Kontener(12, 12, 12, 12, 12, ContainerType.GasContainer);
