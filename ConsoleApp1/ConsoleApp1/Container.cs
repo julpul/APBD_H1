@@ -2,6 +2,12 @@ using System.Security.AccessControl;
 
 namespace ConsoleApp1;
 
+public class OverfillException : Exception
+{
+    public OverfillException(string message) : base(message) {}
+}
+
+
 
 public enum ContainerType
 {
@@ -10,7 +16,7 @@ public enum ContainerType
     RefrigeratedContainer = 'R'
 }
 
-public class Kontener {
+public class Container {
     public double load_mass { get; set; }
     public double height { get; set; }
     public double container_mass { get; set; }
@@ -21,7 +27,7 @@ public class Kontener {
     public double max_load { get; set; }
 
 
-    public Kontener(double loadMass, double height, double containerMass, double depth,  double maxLoad, ContainerType containerType)
+    public Container(double loadMass, double height, double containerMass, double depth,  double maxLoad, ContainerType containerType)
     {
         load_mass = loadMass;
         this.height = height;
@@ -37,4 +43,22 @@ public class Kontener {
     {
         return "KON-" + containerType.ToString()[0].ToString() + "-" + num_for_serial++;
     }
+
+    public void removeLoad()
+    {
+        load_mass = 0;
+    }
+
+    public virtual void addLoad(double load, bool dangerusLoad = false)
+    {
+        if (load <= max_load)
+        {
+            load_mass = load;
+        }
+        else
+        {
+            throw new OverfillException("The load is too big");
+        }
+    }
+    
 }
