@@ -21,6 +21,6 @@ public class LiquidContainer : Container, IHazardNotifier
         {
             Console.WriteLine("not dengerus load exceeded maximum load. max 0.9 max load");
         }
-        
     }
+    
 }

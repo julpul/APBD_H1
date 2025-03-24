@@ -44,7 +44,7 @@ public class Container {
         return "KON-" + containerType.ToString()[0].ToString() + "-" + num_for_serial++;
     }
 
-    public void removeLoad()
+    public virtual void removeLoad()
     {
         load_mass = 0;
     }
