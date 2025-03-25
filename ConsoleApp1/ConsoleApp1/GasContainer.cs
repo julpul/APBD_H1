@@ -1,14 +1,5 @@
 namespace ConsoleApp1;
 
-/*
-Kontenery na gaz (G)
-Kontenery przechowujące gaz przechowują dodatkową informacje na temat ciśnienia (w atmosferach).
-    W momencie kiedy opróżniamy kontener na gaz - pozostawiamy 5% jego ładunku wewnątrz kontenera.
-    Powinien zaimplementować interfejs IHazardNotifier. Metoda powinna pozwolić na informowanie o zajściu niebezpiecznego
-zdarzenia wraz z numerem seryjnym danego kontenera.
-    Jeśli masa ładunku przekroczy dopuszczalną ładowność - chcemy zwrócić błąd.
-    */
-
 
 public class GasContainer:Container, IHazardNotifier
 {

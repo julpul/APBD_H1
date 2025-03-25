@@ -25,9 +25,20 @@ public class ContainerShip
         ShipLoad.Remove(container);
     }
 
+    public void removeAllContainers()
+    {
+        ShipLoad.Clear();
+    }
+
+    public void addContainers<T>(List<T> containers) where T: Container
+    {
+        ShipLoad.AddRange(containers);
+    }
+    
+
     public void switchContainer(string serial_number_remove, Container container_new)
     {
-        ShipLoad.Select(container => container.serial_number == serial_number_remove ? container_new : container);
+        this.ShipLoad = ShipLoad.Select(container => container.serial_number == serial_number_remove ? container_new : container).ToList();
     }
 
     public static void swapContainers(Container container1, Container container2, ContainerShip ship1,

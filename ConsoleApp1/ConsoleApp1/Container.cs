@@ -60,5 +60,17 @@ public class Container {
             throw new OverfillException("The load is too big");
         }
     }
-    
+    public override string ToString()
+    {
+        return $"Container [" +
+               $"SerialNumber={serial_number}, " +
+               $"Type={containerType}, " +
+               $"LoadMass={load_mass}, " +
+               $"ContainerMass={container_mass}, " +
+               $"Height={height}, " +
+               $"Depth={depth}, " +
+               $"MaxLoad={max_load}" +
+               $"]";
+    }
+
 }
